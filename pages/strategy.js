@@ -9,7 +9,6 @@ export default function Strategy() {
     const fetchData = async () => {
         try {
             const response = await axios.get('http://localhost:4000/candles', config.configHeader);
-            setCandles(response?.data?.result);
         } catch (error) {
             console.error(error);
         }
