@@ -1,39 +1,42 @@
 import { useEffect, useState } from 'react';
 const axios = require('axios');
-
+const config = require('../config/index')
 
 export default function Home() {
   const [balance, setBalance] = useState(0);
   const [equity, setEquity] = useState(0);
   const [profitDay, setProfitDay] = useState(0);
   const [position, setPosition] = useState({});
+  const [dataGET, setDataGet] = useState(false)
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000', config.configHeader);
+      setBalance(response?.data?.result?.Account?.balance);
+      setEquity(response?.data?.result?.Account?.equity);
+      setProfitDay(response?.data?.result?.ProfitDay);
+      setPosition(response?.data?.result?.Position);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtldmluIiwiaWF0IjoxNjk1MDkxNjg1fQ.kgkA0xCN1wtyr9IXj5QWNEgv2gFT1Htg23TxfocOnXU';
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      };
-      try {
-        const response = await axios.get('http://localhost:4000', config);
-        setBalance(response?.data?.result?.Account?.balance);
-        setEquity(response?.data?.result?.Account?.equity);
-        setProfitDay(response?.data?.result?.ProfitDay);
-        setPosition(response?.data?.result?.Position);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
     fetchData()
+  }, [dataGET]);
 
-  }, []);
 
-  console.log(position)
-
+  const ClosePositionByID = async (data) => {
+    try {
+      const requestBody = {
+        position_id: data
+      };
+      const closePosition = await axios.post('http://localhost:4000/closeposition', requestBody, config.configHeader);
+      setDataGet(true);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
@@ -54,7 +57,7 @@ export default function Home() {
         <div className="rounded bg-white h-40 shadow-sm">
           <div className="px-6 py-4 font-bold text-xl text-center items-center mt-6 text-gray-500">
             Profit / Day
-            <div>${profitDay}</div>
+            <div>${profitDay.toFixed(2)}</div>
           </div>
         </div>
       </div>
@@ -98,7 +101,7 @@ export default function Home() {
                         <div className='w-full bg-red-600 rounded-md justify-center items-center flex'>
                           <button
                             className='text-white font-bold'
-                            onClick={() => console.log('work')}
+                            onClick={() => ClosePositionByID(value?.id)}
                           >Close Position</button>
                         </div>
                       </td>

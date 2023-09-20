@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import Link from "next/link";
-import { HomeIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
+import { HomeIcon, CreditCardIcon, ArrowTrendingUpIcon } from "@heroicons/react/24/solid";
 import { useRouter } from "next/router";
 
 const SideBar = forwardRef(({ showNav }, ref) => {
@@ -34,18 +34,18 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
           </div>
         </Link>
-        <Link href="/account">
+        <Link href="/strategy">
           <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/account"
+            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/strategy"
               ? "bg-orange-100 text-orange-500"
               : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
               }`}
           >
             <div className="mr-2">
-              <UserIcon className="h-5 w-5" />
+              <ArrowTrendingUpIcon className="h-5 w-5" />
             </div>
             <div>
-              <p>Account</p>
+              <p>Strategy</p>
             </div>
           </div>
         </Link>
