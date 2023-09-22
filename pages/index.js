@@ -95,8 +95,9 @@ export default function Home() {
                     <td> <div className='w-full bg-red-600 rounded-md justify-center items-center flex'>
                       <button
                         className='text-white font-bold'
-                        onClick={() => ClosePositionByID(value?.id)}
-                      >Close Position</button>
+                      // onClick={() => ClosePositionByID(value?.id)}
+                      >Close Position
+                      </button>
                     </div></td>
                   </tr>
                 ))}
