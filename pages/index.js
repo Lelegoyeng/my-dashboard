@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <p className="text-gray-700 text-3xl mb-16 font-bold">Dashboard</p>
+      <p className="text-gray-700 text-3xl mb-16 font-bold">Dashboard BOT </p>
       <div className="grid lg:grid-cols-3 gap-5 mb-12">
         <div className="rounded bg-white h-40 shadow-sm">
           <div className="px-6 py-4 font-bold text-xl text-center items-center mt-6 text-gray-500">

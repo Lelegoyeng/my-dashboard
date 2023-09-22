@@ -43,9 +43,10 @@ export default function History() {
                     history?.result?.weekly?.Saturday,
                     history?.result?.weekly?.Sunday,
                 ],
-                backgroundColor: 'aqua',
-                borderColor: 'black',
-                pointBorderColor: 'aqua',
+                backgroundColor: 'yellow',
+                borderColor: 'indigo',
+                borderWidth: 1,
+                pointBorderColor: 'red',
                 // fill: true,
                 tension: 0
             }
