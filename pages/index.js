@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="grid col-1 mb-10">
+      <div className="grid lg:grid-cols-1 gap-5 mb-12">
         <div className="card w-full bg-base-100 shadow-xl px-10 py-10">
           <div className="card-title text-gray-700 text-lg font-bold ml-10 mt-5">Table Open Position </div>
           <div className="overflow-x-auto mt-11">

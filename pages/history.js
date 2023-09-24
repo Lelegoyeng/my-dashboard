@@ -21,7 +21,7 @@ export default function History() {
     return (
         <div>
             <p className="text-gray-700 text-3xl font-bold">History</p>
-            <div className="card w-full bg-base-100 shadow-xl mt-5">
+            <div className="card w-full bg-base-100 shadow-xl mt-5 mb-5">
                 <h2 className="card-title text-gray-700 text-2xl font-bold ml-10 mt-5">Transaction Of The Week</h2>
                 <LineChart
                     title={`Weekly Transaction`}
@@ -38,7 +38,7 @@ export default function History() {
                     profit={history?.result?.totalWeekly.toFixed(2)}
                 />
             </div>
-            <div className="card w-full bg-base-100 shadow-xl mt-5">
+            <div className="card w-full bg-base-100 shadow-xl mb-5">
                 <h2 className="card-title text-gray-700 text-2xl font-bold ml-10 mt-5">Transaction Of The Month</h2>
                 <LineChart
                     title={`This Month`}
@@ -52,7 +52,7 @@ export default function History() {
                     profit={history?.result?.totalOneMonth.toFixed(2)}
                 />
             </div>
-            <div className="card w-full bg-base-100 shadow-xl mt-5">
+            <div className="card w-full bg-base-100 shadow-xl mb-5">
                 <h2 className="card-title text-gray-700 text-2xl font-bold ml-10 mt-5">Transaction Of The Year</h2>
                 <LineChart
                     title={`This Year`}

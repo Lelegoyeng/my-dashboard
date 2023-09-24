@@ -23,7 +23,7 @@ export default function TopBar({ showNav, setShowNav }) {
         />
       </div>
       <div className="flex items-center pr-4 md:pr-16">
-        <Popover className="relative">
+        {/* <Popover className="relative">
           <Popover.Button className="outline-none mr-5 md:mr-8 cursor-pointer text-gray-700">
             <BellIcon className="h-6 w-6" />
           </Popover.Button>
@@ -101,7 +101,7 @@ export default function TopBar({ showNav, setShowNav }) {
               </div>
             </Popover.Panel>
           </Transition>
-        </Popover>
+        </Popover> */}
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center items-center">
