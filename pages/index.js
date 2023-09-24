@@ -42,28 +42,28 @@ export default function Home() {
     <>
       <p className="text-gray-700 text-3xl mb-16 font-bold">Dashboard BOT </p>
       <div className="grid lg:grid-cols-3 gap-5 mb-12">
-        <div className="rounded bg-white h-40 shadow-sm">
-          <div className="px-6 py-4 font-bold text-xl text-center items-center mt-6 text-gray-500">
+        <div className="card w-full bg-base-100 shadow-xl">
+          <div className="px-6 py-10 font-bold text-xl text-center items-center mt-3 text-gray-600">
             Balance
             <div>${balance}</div>
           </div>
         </div>
-        <div className="rounded bg-white h-40 shadow-sm">
-          <div className="px-6 py-4 font-bold text-xl text-center items-center mt-6 text-gray-500">
+        <div className="card w-full bg-base-100 shadow-xl">
+          <div className="px-6 py-10 font-bold text-xl text-center items-center mt-3 text-gray-600">
             Equity
             <div>${equity}</div>
           </div>
         </div>
-        <div className="rounded bg-white h-40 shadow-sm">
-          <div className="px-6 py-4 font-bold text-xl text-center items-center mt-6 text-gray-500">
+        <div className="card w-full bg-base-100 shadow-xl">
+          <div className="px-6 py-10 font-bold text-xl text-center items-center mt-3 text-gray-600">
             Profit / Day
             <div>${profitDay.toFixed(2)}</div>
           </div>
         </div>
       </div>
-      <div className="grid col-1 bg-white h-96 shadow-sm mb-10">
-        <div className="flex flex-col overflow-x-auto">
-          <div className='text-lg text-center font-semibold mt-3 text-gray-600'>Open Position Table</div>
+      <div className="grid col-1 mb-10">
+        <div className="card w-full bg-base-100 shadow-xl px-10 py-10">
+          <div className="card-title text-gray-700 text-lg font-bold ml-10 mt-5">Table Open Position </div>
           <div className="overflow-x-auto mt-11">
             <table className="table table-xs">
               <thead>
